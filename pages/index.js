@@ -24,10 +24,18 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
+    
+    const myModal = new bootstrap.Modal('#outputModal', {
+      keyboard: false
+    });
+
+    const modalToggle = document.getElementById('modalToggle');
+    
+    myModal.show(modalToggle);
+    modalToggle.style.display = "inline-block";
   }
 
   const onUserChangedText = (event) => {
@@ -36,24 +44,27 @@ const Home = () => {
 
   return (
     <div className="root">
-      <div className="container">
-        <div className="header">
+      <div className="header">
           <div className="header-title">
             <h1>PitchIt</h1>
           </div>
           <div className="header-subtitle">
-            <p>Craft an impactful 90-second elevator pitch for your startup. 💡🚀</p>
-          </div>
+            <p>Craft an impactful 90-second elevator pitch for your startup.</p>
+          </div>  
         </div>
-
+      <div className="container">
         <div className="prompt-container">
+          <p>Type in your idea and then hit the PitchIt button. Be very descriptive for the best results. Or be random and you might find the next unicorn... 🔮</p>
+          <p><small>Example: A machine-learning tool that mines Twitter for data making it easier to track customer satisfaction.</small></p>
           <textarea
             className="prompt-box"
-            placeholder="An (app/business/service) that (description)."
+            placeholder="An (app/device/business) that (solution/service/product) making (problem/product) (behavior/result)."
             value={userInput}
             onChange={onUserChangedText}
           />
+          
           <div className="prompt-buttons">
+          <a class="modal-toggle" type="button" href="#" id="modalToggle" data-bs-toggle="modal" data-bs-target="#outputModal">View my pitch</a>
   <a
     className={isGenerating ? 'generate-button loading' : 'generate-button'}
     onClick={callGenerateEndpoint}
@@ -63,19 +74,33 @@ const Home = () => {
     </div>
   </a>
 </div>
-
-        {apiOutput && (
-  <div className="output">
-    <div className="output-header-container">
+<div id="outputModal" className="output modal fade">
+        
+  
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <div className="output-header-container">
       <div className="output-header">
-        <h3>Output</h3>
+        <h3>The pitch:</h3>
+      </div>
+      <a href="#" class="close-link" data-bs-dismiss="modal">Close</a>
+    </div>
+      </div>
+      <div class="modal-body">
+      <div className="output-content">
+      {apiOutput}
+    </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I just turned my business idea into a pitch. Check it out! &lt;insert screenshot&gt;" data-hashtags="PitchIt" data-show-count="false">Tweet</a>
       </div>
     </div>
-    <div className="output-content">
-      <p>{apiOutput}</p>
-    </div>
+ 
+    
+    
   </div>
-)}
+</div>
 
         </div>
       </div>
@@ -90,6 +115,7 @@ const Home = () => {
             <p>build with buildspace</p>
           </div>
         </a>
+        <a href="https://twitter.com/cresencio?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Built by @cresencio</a>
       </div>
     </div>
   );
