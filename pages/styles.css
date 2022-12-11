@@ -1,16 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&display=swap');
+
+/* 1. Electric Blue (#00BFFF)
+2. Energizing Yellow (#FFCF00)
+3. Motivating Red (#FF0000)
+4. Trustworthy Green (#009901)
+5. Creative Purple (#6A00FF) */
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Bebas Neue', cursive;
 }
 
 .root {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: #00BFFF;
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -40,7 +50,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: #FFF;
 }
 
 .header-title {
@@ -80,14 +90,14 @@ body {
 
 .prompt-box {
     border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
     border-left-width: 1px;
     border-right-width: 1px;
     border-style: solid;
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255,1);
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
@@ -108,7 +118,7 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: #00BFFF;
     text-decoration: none;
     text-transform: none;
 }
@@ -119,7 +129,10 @@ textarea {
 
 
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color: #ffffff;
+}
+.prompt-box::placeholder {
+    color:#000000;
 }
 
 
@@ -172,7 +185,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: #009901;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -323,7 +336,7 @@ textarea {
 .output-content p {
     text-align: center;
     white-space: pre-line;
-    color: yellowgreen;
+    color: #FFFFFF;
     line-height: 1.8rem;
 }
 

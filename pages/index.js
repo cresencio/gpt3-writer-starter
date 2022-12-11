@@ -42,14 +42,14 @@ const Home = () => {
             <h1>PitchIt</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Craft an impactful 90-second elevator pitch for your startup.</h2>
+            <p>Craft an impactful 90-second elevator pitch for your startup. 💡🚀</p>
           </div>
         </div>
 
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="Problem, solution, how it works, value/benefit"
+            placeholder="An (app/business/service) that (description)."
             value={userInput}
             onChange={onUserChangedText}
           />
