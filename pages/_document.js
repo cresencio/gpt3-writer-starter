@@ -8,7 +8,7 @@ export default function Document() {
         <meta property="og:description" content="Craft an impactful 90-second elevator pitch for your startup." key="description"/>
         <meta
           property="og:image"
-          content="./assets/meta.png"
+          content="./meta.png"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
