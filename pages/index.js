@@ -59,7 +59,7 @@ const Home = () => {
     onClick={callGenerateEndpoint}
   >
     <div className="generate">
-    {isGenerating ? <span className="loader"></span> : <p>PitchIt</p>}
+    {isGenerating ? <span className="loader">🦄</span> : <p>PitchIt</p>}
     </div>
   </a>
 </div>
