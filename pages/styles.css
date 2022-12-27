@@ -4,7 +4,21 @@
 2. Energizing Yellow (#FFCF00)
 3. Motivating Red (#FF0000)
 4. Trustworthy Green (#009901)
-5. Creative Purple (#6A00FF) */
+5. Creative Purple (#6A00FF) 
+$navy-ocean: #082D56;
+$alice-blue: #f0f8ff;
+$fresh-mint: #64DFE7;
+$vape-cloud: #F7F8FA;
+$clean-ash: #C9D1D7;*/
+
+.generate-button.navy{
+  background-color: #082D56;
+  color: #f0f8ff;
+}
+
+.text-warning{
+  color: #FFCF00;
+}
 
 .close-link{
 	position: absolute;
@@ -15,6 +29,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Slab', serif;
+    background-color: #082D56;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -25,10 +40,8 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: #ffffff;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 100vh;
     overflow: auto;
     padding: 0px;
     position: relative;
@@ -56,8 +69,8 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    background-color: #00BFFF;
-    color: #FFF;
+    color: #f0f8ff;
+    padding-top: 2rem;
 }
 
 .header-title {
@@ -73,7 +86,7 @@ h1,h2,h3,h4,h5,h6{
     line-height: 1.2em;
     text-align: center;
     margin: 0;
-    border-bottom: 3px solid #ffcf00;
+    border-bottom: 3px solid #f0f8ff;
 }
 
 .header-subtitle p {
@@ -193,7 +206,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: #ff0000;
+    background-color: #64dfe7;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -204,10 +217,10 @@ textarea {
     padding: 16px 24px;
     position: relative;
     text-decoration: none;
-    width: min-content;
+    width: fit-content;
     will-change: transform;
     cursor: pointer;
-    color: #ffffff;
+    color: #082d56;
 }
 
 .generate {
@@ -304,7 +317,7 @@ textarea {
     overflow: hidden;
     position: relative;
     width: 100%;
-    color: #6A00FF;
+    color: #082D56;
     margin-bottom: 6rem;
 }
 
@@ -342,7 +355,8 @@ textarea {
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
-    color: #6A00FF;
+    color: #082D56;
+    white-space: break-spaces;
 }
 
 .output-content p {
@@ -737,3 +751,127 @@ textarea {
       overflow-y: auto;
     }
   }
+
+
+.btn-primary {
+  color: #f0f8ff;
+}
+#menubar, #dock {
+  background-color: #082d56;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#menubar a, #dock a, #menubar button, #dock button {
+  color: #64dfe7;
+  text-decoration: none;
+}
+.screen-container {
+  display: flex;
+  background-color: #f0f8ff;
+}
+#login-screen {
+  background-color: #666;
+}
+#login-screen .screen-container {
+  height: 100vh;
+}
+#login-screen .card {
+  max-width: 400px;
+  margin: auto;
+}
+#playground-screen, #pitchit-screen {
+  color: #082d56;
+}
+#playground-screen .form-control, #pitchit-screen .form-control {
+  background-color: #f7f8fa;
+  height: 150px;
+}
+#playground-screen label, #pitchit-screen label {
+  z-index: 0;
+}
+#playground-screen .btn, #pitchit-screen .btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem 0.75rem;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+#playground-screen .spinner-border, #pitchit-screen .spinner-border {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+#playground-screen .ai-output, #pitchit-screen .ai-output {
+  white-space: pre-line;
+}
+.card-img{
+  height: auto!important;
+}
+.screen-container{
+  padding: 20px;
+}
+
+.screen-container .row{
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.card, .card-img{
+  max-width: 100%;
+}
+
+.card .g-0{
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  margin: 20px auto;
+}
+
+.card .col-md-4{
+  width: 40%;
+}
+.card .col-md-8{
+  width: 60%;
+  padding: 20px;
+}
+
+.root-playground{
+  background-color: #f0f8ff;
+  color: #082D56;
+  height: 100vh;
+}
+
+.root-pitchit{
+  background-color: #f0f8ff;
+  color: #082D56;
+  height: auto;
+}
+
+.root-pitchit .prompt-buttons {
+  margin-bottom: 20px;
+}
+
+.root-playground .header, .root-playground .prompt-container,
+.root-pitchit .header, .root-pitchit .prompt-container{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.root-playground .header-title, .root-playground .header-subtitle,
+.root-pitchit .header-title, .root-pitchit .header-subtitle{
+  color: #082D56;
+}
+
+.root-playground .container,
+.root-pitchit .container {
+  max-width: none;
+}
